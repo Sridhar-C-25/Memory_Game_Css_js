@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  background-image: url("./assets/bg.jpg");
+}
+
+.game {
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  background: #ffffff;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  background-position: center;
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+}
+
+.card .back {
+  transform: rotateY(180deg);
+}
+
+.card .front {
+  background-image: url("./assets/ball.png");
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
